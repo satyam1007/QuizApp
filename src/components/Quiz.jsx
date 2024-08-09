@@ -98,7 +98,7 @@ function Quiz({ goBack }) {
                       onClick={(e) => checkAns(e, 1)}
                       className={listStyle}
                     >
-                      <span>A.</span> {questions.option1}
+                      {questions.option1}
                     </button>
                   </li>
                   <li>
@@ -107,7 +107,7 @@ function Quiz({ goBack }) {
                       onClick={(e) => checkAns(e, 2)}
                       className={listStyle}
                     >
-                      <span>B.</span> {questions.option2}
+                      {questions.option2}
                     </button>
                   </li>
                   <li>
@@ -116,7 +116,7 @@ function Quiz({ goBack }) {
                       onClick={(e) => checkAns(e, 3)}
                       className={listStyle}
                     >
-                      <span>C.</span> {questions.option3}
+                      {questions.option3}
                     </button>
                   </li>
                   <li>
@@ -125,7 +125,7 @@ function Quiz({ goBack }) {
                       onClick={(e) => checkAns(e, 4)}
                       className={listStyle}
                     >
-                      <span>D.</span> {questions.option4}
+                      {questions.option4}
                     </button>
                   </li>
                 </ul>
