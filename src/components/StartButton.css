@@ -1,0 +1,12 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+#quizHeading {
+background-image: url('https://media.istockphoto.com/id/624031568/photo/pink-glitter-texture-abstract-background.jpg?s=612x612&w=0&k=20&c=3s7v054gPp7A9kHCMQRSHOGqqvbJaj_52im7qZeZQUE=');
+background-size: cover;
+background-clip: text;
+color: transparent;
+}
