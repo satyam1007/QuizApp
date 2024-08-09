@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
-function LevelSelector({ easyMode, onBack, normalMode }) {
+function LevelSelector({ easyMode, onBack, normalMode, hardMode }) {
   const levelBtnUI =
     "border-solid border-2 border-white text-white py-2 px-4 sm:px-6 md:px-12 rounded-full text-lg sm:text-xl bg-purple-800 hover:bg-purple-900 duration-200";
 
@@ -39,7 +39,9 @@ function LevelSelector({ easyMode, onBack, normalMode }) {
           <p className="text-lg text-white text-center py-2 font-bold">
             Hard Level
           </p>
-          <button className={levelBtnUI}>Start Quiz</button>
+          <button className={levelBtnUI} onClick={hardMode}>
+            Start Quiz
+          </button>
         </div>
       </div>
     </>

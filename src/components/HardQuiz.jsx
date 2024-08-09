@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { NormalData } from "../assets/NormalData";
-import "./NormalQuiz.css";
+import { HardData } from "../assets/HardData";
+import "./HardQuiz.css";
 
-function NormalQuiz({ goBack }) {
+function HardQuiz({ goBack }) {
   let [index, setIndex] = useState(0);
-  let [questions, setQuestions] = useState(NormalData[index]);
+  let [questions, setQuestions] = useState(HardData[index]);
   let [lock, setLock] = useState(false);
   let [score, setScore] = useState(0);
   let [result, setResult] = useState(false);
@@ -33,13 +33,13 @@ function NormalQuiz({ goBack }) {
 
   const nextQuestion = () => {
     if (lock === true) {
-      if (index === NormalData.length - 1) {
+      if (index === HardData.length - 1) {
         setResult(true);
         return 0;
       }
 
       setIndex(++index);
-      setQuestions(NormalData[index]);
+      setQuestions(HardData[index]);
       setLock(false);
 
       option_array.map((option) => {
@@ -52,7 +52,7 @@ function NormalQuiz({ goBack }) {
 
   const reset = () => {
     setIndex(0);
-    setQuestions(NormalData[0]);
+    setQuestions(HardData[0]);
     setScore(0);
     setLock(false);
     setResult(false);
@@ -144,7 +144,7 @@ function NormalQuiz({ goBack }) {
 
                 <div className="px-8 text-center bg-purple-800 text-white py-3 rounded-lg shadow">
                   <h2>
-                    {index + 1} of {NormalData.length} questions
+                    {index + 1} of {HardData.length} questions
                   </h2>
                 </div>
               </div>
@@ -157,10 +157,10 @@ function NormalQuiz({ goBack }) {
           <div className="flex justify-center items-center pt-56 px-4">
             <div className="bg-slate-400 w-full max-w-xs sm:max-w-sm md:max-w-md h-auto mt-4 rounded-lg shadow-md p-4 sm:p-6 md:p-8 text-center space-y-4">
               <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-                You Scored {score} Out Of {NormalData.length}
+                You Scored {score} Out Of {HardData.length}
               </h2>
 
-              {score === NormalData.length ? (
+              {score === HardData.length ? (
                 <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-green-800">
                   🎉 Congratulations! All answers are correct! 🎉
                 </h3>
@@ -185,4 +185,4 @@ function NormalQuiz({ goBack }) {
   );
 }
 
-export default NormalQuiz;
+export default HardQuiz;
