@@ -158,6 +158,16 @@ function Quiz({ goBack }) {
               <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
                 You Scored {score} Out Of {data.length}
               </h2>
+
+              {score === data.length ? (
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-green-800">
+                  🎉 Congratulations! All answers are correct! 🎉
+                </h3>
+              ) : (
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-red-900">
+                  Try Again! Some answers were incorrect.
+                </h3>
+              )}
               <button
                 onClick={reset}
                 className="border-2 border-white px-6 sm:px-8 py-2 rounded bg-purple-800 text-white hover:bg-purple-900 transition duration-300"
