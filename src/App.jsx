@@ -2,11 +2,19 @@ import { useState } from "react";
 import LevelSelector from "./components/LevelSelector";
 import StartButton from "./components/StartButton";
 import Quiz from "./components/Quiz";
-import NormalQuiz from "./components/NormalQuiz";
-import HardQuiz from "./components/HardQuiz";
+import { data as easyData } from "./assets/Data";
+import { NormalData } from "./assets/NormalData";
+import { HardData } from "./assets/HardData";
 
 function App() {
   const [stage, setStage] = useState("start");
+  const [quizSet, setQuizSet] = useState(null);
+
+  const handleQuizData = (data) => {
+    setQuizSet(data);
+    setStage("quiz");
+  };
+
   return (
     <>
       {stage === "start" && (
@@ -15,17 +23,13 @@ function App() {
       {stage === "levelSelector" && (
         <LevelSelector
           onBack={() => setStage("start")}
-          easyMode={() => setStage("quiz")}
-          normalMode={() => setStage("normalQuiz")}
-          hardMode={() => setStage("hardQuiz")}
+          easyMode={() => handleQuizData(easyData)}
+          normalMode={() => handleQuizData(NormalData)}
+          hardMode={() => handleQuizData(HardData)}
         />
       )}
-      {stage === "quiz" && <Quiz goBack={() => setStage("levelSelector")} />}
-      {stage === "normalQuiz" && (
-        <NormalQuiz goBack={() => setStage("levelSelector")} />
-      )}
-      {stage === "hardQuiz" && (
-        <HardQuiz goBack={() => setStage("levelSelector")} />
+      {stage === "quiz" && (
+        <Quiz goBack={() => setStage("levelSelector")} data={quizSet} />
       )}
     </>
   );
