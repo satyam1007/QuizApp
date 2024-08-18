@@ -68,7 +68,7 @@ export const data = [
     option2: ".header",
     option3: "#header",
     option4: "*header",
-    img: "https://lh5.googleusercontent.com/TI891Vf5V9Xi_kuReCexCgSWdxPNzPSPLK1mQ0wps4BwVZxwvGpJ9l-GWWWU6mRGR3e00KZca9goXYNeH9-8E2YpkFgbrmSpjZmlXhaW9ZYWmdxWDgoNwEkulDATmyl0yV_dSKt6yQmf1Bq_7tJUjByzfO7M79Xcv95YzI3O5gfkm02mFkhTMrghSAlMpw",
+    img: "https://i.ytimg.com/vi/Q9eTBrTmgsc/maxresdefault.jpg",
     ans: 3,
   },
   {
